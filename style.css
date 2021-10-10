@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.header {
+  grid-area: header;
+  background-color: #d80d0a;
+}
+.titulo {
+  color: #ffe7e6;
+}
+
+.etiquetas {
+  color: #ffe7e6;
+  font-size: 1.2rem;
+}
+
+.logoS {
+  width: 50px;
+}
+.navbar {
+  grid-area: navbar;
+  background-color: #bdbf00;
+}
+
+.img1{
+  width: 630px;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: #bdbf00;
+}
+
+.main {
+  grid-area: main;
+  background-color: #ffff;
+}
+
+.decuentos{
+  width: 750px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #d80d0a;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  100px
+    "navbar"  100px
+    "main"    auto
+    "sidebar" 10px
+    "footer"  100px;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    /* grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;
+    grid-template-areas: 
+    "header  header"
+    "navbar  navbar"
+    "sidebar main"
+    "footer  footer"; */
+
+    grid-template:
+      "header  header" 150px
+      "navbar  sidebar" 198px
+      "main    sidebar" auto
+      "footer  footer" 65px /
+      900px    auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "header  header header"  100px
+      "navbar  sidebar" 100px
+      "main    sidebar" 150px
+      "footer  footer footer"  100px /
+      200px    auto   100px;
+  }
+}
